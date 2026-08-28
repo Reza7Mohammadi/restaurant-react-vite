@@ -1,5 +1,4 @@
 import './Navbar.css'
-import '../../App.css'
 import logo from '../../assest/logo.png.webp'
 import { NavLink } from 'react-router-dom';
 

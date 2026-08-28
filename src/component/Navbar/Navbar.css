@@ -70,3 +70,48 @@ header{
 #menu-icon:hover{
     color: var(--main-color);
 }
+
+@media screen and (max-width: 1070px) {
+    #menu-icon {
+        display: block;
+        font-size: 35px;
+    }
+
+    .icon a {
+        font-size: 28px;
+        margin: 0 10px;
+    }
+
+    .nav {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        left: 100%;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        background: var(--bg-color);
+        padding: 50px 0;
+        border-radius: 0 0 30px 30px;
+        box-shadow: 0 20px 20px rgba(15, 54, 55, 0.2);
+        clip-path: circle(144% at 0% 0%);
+        transition: all 0.55s ease-in-out;
+    }
+
+    .nav a {
+        display: block;
+        padding: 0;
+        margin-bottom: 27px;
+        font-size: 32px;
+        font-weight: 600;
+        border-bottom: none;
+    }
+
+    .nav a:hover {
+        border-bottom: none;
+    }
+
+    .nav.open {
+        left: 0;
+    }
+}
