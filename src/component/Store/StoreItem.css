@@ -1,0 +1,33 @@
+.store-item{
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--second-color);
+    padding:10px;
+    border-radius: 15px;
+    justify-content: space-between;
+    grid-gap: 20px;
+    cursor: pointer;
+    transition: all .7s ease;
+}
+.store-item img{
+    max-width: 130px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.store-item-text h2{
+    font-size:17px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color:#000;
+}
+.store-item-text p{
+    color: var(--other-color);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 25px;
+}
+.store-item:hover{
+    transform: scale(1.06) translateY(-5px);
+    border: 1px solid var(--main-color);
+}

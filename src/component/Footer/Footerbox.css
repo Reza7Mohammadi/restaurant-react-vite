@@ -1,0 +1,17 @@
+.footer-box h4{
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.footer-box li a{
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--other-color);
+    transition: all .6s ease;
+}
+.footer-box li a:hover{
+    color: var(--main-color);
+    transform: translateY(-5px);
+}

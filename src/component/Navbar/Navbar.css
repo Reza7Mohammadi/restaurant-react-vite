@@ -1,0 +1,72 @@
+header{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 15px 10%;
+    background-color: var(--bg-color);
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px -2px #0000001a;
+    transition: all .6s ease;
+}
+.logo img{
+    max-width: 180px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.nav{
+    display: flex;
+}
+.nav a{
+    display: inline-block;
+    margin: 0 25px;
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    padding: 2px 0;
+    border-bottom: 2px solid transparent;
+    transition: all .6s ease;
+}
+.nav a.active{
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+.nav a:hover{
+    color: var(--main-color);
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+}
+.icon a{
+  display: inline-block;
+  color: var(--text-color);
+  margin: 0 7px;
+  font-size: 22px;
+  transition: all .5s ease;
+}
+.icon a:hover{
+    color: var(--main-color);
+    transform: scale(1.12);
+}
+.icon a.active i{
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+#menu-icon{
+    color: var(--text-color);
+    font-size: 28px;
+    z-index: 10001;
+    cursor: pointer;
+    transition: all .6s ease;
+    margin-left: 7px;
+    display: none;
+}
+#menu-icon:hover{
+    color: var(--main-color);
+}

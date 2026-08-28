@@ -1,0 +1,43 @@
+.store-list{
+    position: relative;
+    overflow: hidden;
+    z-index: 900;
+}
+.store-list img{
+    width: 100%;
+    height: auto;
+    transition: all .7s ease;
+}
+.store-list img:hover{
+    transform: scale(1.12);
+}
+.store-list-text{
+    position: absolute;
+    left: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 901;
+}
+.store-list-text p{
+    font-size:var(--p-font);
+    font-weight: 400;
+}
+.store-list-text h2{
+   font-size:29px;
+    font-weight: 540;
+    margin: 15px 0;
+    
+}
+.store-list-text a{
+    display: inline-block;
+    padding: 10px 30px;
+    color: var(--bg-color);
+    background-color: var(--text-color);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: all .7s ease;
+}
+.store-list-text a:hover{
+    background-color: var(--main-color);
+}

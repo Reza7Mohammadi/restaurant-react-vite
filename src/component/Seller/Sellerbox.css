@@ -1,0 +1,428 @@
+/* =========================================
+   SELLER BOX
+========================================= */
+
+.seller-box {
+  min-width: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.seller-box:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 18px 30px 7px rgba(2, 10, 78, 0.08);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.sell-img {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #f3f4f0;
+
+  cursor: pointer;
+}
+
+.sell-img img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s
+    cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.seller-box:hover .sell-img img {
+  transform: scale(1.06);
+}
+
+
+/* =========================================
+   WISHLIST
+========================================= */
+
+.seller-wishlist {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  z-index: 3;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  background: rgba(48, 61, 42, 0.75);
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  font-size: 1.15rem;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.seller-wishlist:hover {
+  color: #d94b4b;
+  background: #ffffff;
+
+  transform: scale(1.1);
+}
+
+.seller-wishlist.active {
+  color: #e53935;
+  background: #ffffff;
+}
+
+.seller-wishlist.active:hover {
+  color: #d32f2f;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.seller-category {
+  position: absolute;
+
+  left: 14px;
+  bottom: 14px;
+
+  padding: 7px 10px;
+
+  color: #ffffff;
+  background: #4b9e22;
+
+  font-size: 0.6rem;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   INFO
+========================================= */
+
+.seller-info {
+  padding: 18px 18px 14px;
+}
+
+
+/* =========================================
+   TITLE + PRICE
+========================================= */
+
+.seller-title {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.seller-title h3 {
+  margin: 0;
+
+  color: #222222;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+.seller-price {
+  flex-shrink: 0;
+
+  color: #4b9e22;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.seller-description {
+  margin: 9px 0 0;
+
+  color: #888888;
+
+  font-size: 0.72rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   ADD TO CART
+========================================= */
+
+.seller-cart {
+  width: calc(100% - 36px);
+
+  min-height: 46px;
+
+  margin: 0 18px 18px;
+
+  padding: 12px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #222222;
+
+  background: transparent;
+
+  border: 1px solid #222222;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 0.67rem;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.seller-cart i {
+  font-size: 1.05rem;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.seller-cart:hover {
+  color: #ffffff;
+
+  background: #4b9e22;
+
+  border-color: #4b9e22;
+
+  transform: translateY(-2px);
+}
+
+.seller-cart:hover i {
+  transform: translateX(5px);
+}
+
+.seller-cart:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   CART CONTROLS
+========================================= */
+
+.seller-cart-controls {
+  width: calc(100% - 36px);
+
+  height: 46px;
+
+  margin: 0 18px 18px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  overflow: hidden;
+
+  background: #303d2a;
+
+  border: 1px solid #303d2a;
+}
+
+
+/* =========================================
+   CONTROL BUTTONS
+========================================= */
+
+.seller-cart-controls button {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  color: #ffffff;
+
+  background: transparent;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 1.3rem;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.seller-cart-controls button:hover {
+  background: #4b9e22;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.seller-cart-controls button:first-child:hover {
+  background: #d94b4b;
+}
+
+
+/* =========================================
+   QUANTITY
+========================================= */
+
+.seller-cart-quantity {
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  border-left: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-right: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .seller-title h3 {
+    font-size: 1rem;
+  }
+
+  .seller-info {
+    padding: 16px 15px 12px;
+  }
+
+  .seller-cart,
+  .seller-cart-controls {
+    width: calc(100% - 30px);
+
+    margin: 0 15px 15px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .seller-title h3 {
+    font-size: 0.95rem;
+  }
+
+  .seller-price {
+    font-size: 0.78rem;
+  }
+
+  .seller-description {
+    font-size: 0.68rem;
+  }
+
+  .seller-cart {
+    min-height: 44px;
+
+    font-size: 0.62rem;
+  }
+
+  .seller-wishlist {
+    top: 10px;
+    right: 10px;
+
+    width: 36px;
+    height: 36px;
+
+    font-size: 1rem;
+  }
+
+  .seller-cart-controls {
+    height: 44px;
+  }
+
+  .seller-cart-controls button {
+    font-size: 1.2rem;
+  }
+
+  .seller-cart-quantity {
+    font-size: 0.95rem;
+  }
+
+}

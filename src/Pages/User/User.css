@@ -1,0 +1,406 @@
+/* =================================================
+   USER PAGE
+================================================= */
+
+.user-page {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding: 100px 7%;
+  box-sizing: border-box;
+  background: #f5f6f1;
+  color: #222;
+}
+
+
+/* =================================================
+   CONTAINER
+================================================= */
+
+.user-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 90px;
+
+  align-items: center;
+}
+
+
+/* =================================================
+   INTRO
+================================================= */
+
+.user-intro {
+  padding-left: 20px;
+}
+
+.user-label {
+  display: block;
+  margin-bottom: 22px;
+
+  color: #4b9e22;
+
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+}
+
+.user-intro h1 {
+  margin: 0;
+
+  color: #222;
+
+  font-size: clamp(4rem, 7vw, 7rem);
+  font-weight: 700;
+
+  line-height: .86;
+  letter-spacing: -.07em;
+}
+
+.user-intro h1 span {
+  color: #d98555;
+}
+
+.user-intro p {
+  max-width: 400px;
+
+  margin: 35px 0 0;
+
+  color: #777;
+
+  font-size: .85rem;
+  line-height: 1.9;
+}
+
+
+/* =================================================
+   FORM WRAPPER
+================================================= */
+
+.user-form-wrapper {
+  padding: 55px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow:
+    0 20px 60px rgba(40, 50, 35, .08);
+}
+
+
+/* =================================================
+   FORM HEADING
+================================================= */
+
+.user-form-heading {
+  display: flex;
+  gap: 30px;
+}
+
+.user-form-heading > span {
+  color: #d98555;
+
+  font-size: .7rem;
+  font-weight: 700;
+
+  letter-spacing: .15em;
+}
+
+.user-form-heading small {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #4b9e22;
+
+  font-size: .6rem;
+  font-weight: 700;
+
+  letter-spacing: .2em;
+}
+
+.user-form-heading h2 {
+  margin: 0;
+
+  color: #222;
+
+  font-size: clamp(2.5rem, 4vw, 4rem);
+
+  font-weight: 600;
+
+  line-height: .95;
+
+  letter-spacing: -.05em;
+}
+
+.user-form-heading h2 em {
+  color: #d98555;
+
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
+}
+
+
+/* =================================================
+   FORM
+================================================= */
+
+.user-form {
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 27px;
+}
+
+
+/* =================================================
+   FIELD
+================================================= */
+
+.user-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-field label {
+  margin-bottom: 9px;
+
+  color: #4b9e22;
+
+  font-size: .65rem;
+  font-weight: 700;
+
+  letter-spacing: .12em;
+}
+
+.user-field input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 15px 16px;
+
+  color: #222;
+  background: #fafbf8;
+
+  border: 1px solid #dedfd8;
+  border-radius: 5px;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: .82rem;
+
+  box-shadow:
+    0 6px 20px rgba(40, 50, 35, .05);
+
+  transition:
+    border-color .3s ease,
+    box-shadow .3s ease,
+    background-color .3s ease;
+}
+
+.user-field input::placeholder {
+  color: #aaa;
+}
+
+.user-field input:focus {
+  background: #fff;
+
+  border-color: #4b9e22;
+
+  box-shadow:
+    0 8px 25px rgba(75, 158, 34, .12);
+}
+
+
+/* =================================================
+   ERROR
+================================================= */
+
+.user-error {
+  margin-top: 7px;
+
+  color: #c65d3b;
+
+  font-size: .65rem;
+  font-weight: 600;
+}
+
+
+/* =================================================
+   BUTTON
+================================================= */
+
+.user-submit {
+  align-self: flex-start;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 8px;
+
+  padding: 16px 22px;
+
+  color: #fff;
+  background: #303d2a;
+
+  border: 1px solid #303d2a;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: .65rem;
+  font-weight: 700;
+
+  letter-spacing: .14em;
+
+  transition:
+    background-color .3s ease,
+    border-color .3s ease,
+    gap .3s ease,
+    transform .3s ease;
+}
+
+.user-submit span {
+  font-size: 1rem;
+}
+
+.user-submit:hover {
+  gap: 35px;
+
+  background: #d98555;
+  border-color: #d98555;
+
+  transform: translateY(-3px);
+}
+
+
+/* =================================================
+   SWITCH
+================================================= */
+
+.user-switch {
+  margin-top: 30px;
+  padding-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-top: 1px solid #e2e3dc;
+}
+
+.user-switch span {
+  color: #888;
+
+  font-size: .72rem;
+}
+
+.user-switch a {
+  padding: 0;
+
+  color: #d98555;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: .65rem;
+  font-weight: 700;
+
+  letter-spacing: .1em;
+
+  transition: color .3s ease;
+}
+
+.user-switch a:hover {
+  color: #4b9e22;
+}
+
+
+/* =================================================
+   TABLET
+================================================= */
+
+@media (max-width: 900px) {
+
+  .user-page {
+    padding: 80px 6%;
+  }
+
+  .user-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .user-intro {
+    padding-left: 0;
+  }
+
+  .user-intro h1 {
+    font-size: 5rem;
+  }
+}
+
+
+/* =================================================
+   MOBILE
+================================================= */
+
+@media (max-width: 600px) {
+
+  .user-page {
+    min-height: auto;
+    padding: 65px 22px;
+  }
+
+  .user-container {
+    gap: 45px;
+  }
+
+  .user-intro h1 {
+    font-size: 3.8rem;
+  }
+
+  .user-intro p {
+    margin-top: 25px;
+  }
+
+  .user-form-wrapper {
+    padding: 35px 22px;
+  }
+
+  .user-form-heading {
+    gap: 18px;
+  }
+
+  .user-form-heading h2 {
+    font-size: 2.8rem;
+  }
+
+  .user-form {
+    margin-top: 40px;
+  }
+
+  .user-submit {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .user-switch {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
