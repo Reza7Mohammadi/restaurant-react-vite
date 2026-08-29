@@ -10,19 +10,41 @@ The application includes dynamic food browsing, product details, shopping cart a
 
 ## ✨ Features
 
-* 📱 Fully responsive design for desktop, tablet, and mobile
-* 🍔 Dynamic food browsing
-* 🛒 Shopping cart with quantity management
-* ❤️ Wishlist functionality
-* 🔎 Food item detail pages
-* 👤 User and registration pages
-* 📖 About page
-* 📩 Contact page
-* 🧭 Client-side routing with React Router
-* 🧩 Reusable and component-based architecture
-* 📝 Form validation with React Hook Form and Yup
-* ⚡ Fast development and production builds with Vite
-* 🚀 Automated GitHub Pages deployment with GitHub Actions
+- 📱 Fully responsive design for desktop, tablet, and mobile
+- 🍔 Dynamic food browsing
+- 🛒 Shopping cart with quantity management
+- ❤️ Wishlist functionality
+- 🔎 Food item detail pages
+- 👤 User and registration pages
+- 📖 About page
+- 📩 Contact page
+- 🧭 Client-side routing with React Router
+- 🧩 Reusable and component-based architecture
+- 📝 Form validation with React Hook Form and Yup
+- ⚡ Fast development and production builds with Vite
+- 🚀 Automated GitHub Pages deployment with GitHub Actions
+
+## 🖼️ Screenshots
+
+### Home
+
+![Home Page](./docs/screenshots/home.png)
+
+### Shop
+
+![Shop Page](./docs/screenshots/shop.png)
+
+### Food Details
+
+![Food Details Page](./docs/screenshots/food-details.png)
+
+### Cart
+
+![Cart Page](./docs/screenshots/cart.png)
+
+### Mobile Responsive
+
+![Mobile Home](./docs/screenshots/mobile.png)
 
 ## 🛠️ Tech Stack
 
@@ -143,17 +165,17 @@ This setup provides an automated CI/CD workflow for the production application.
 
 This project was built to practice and demonstrate:
 
-* Component-based React architecture
-* State management with React hooks
-* Client-side routing
-* Reusable UI components
-* Form handling and validation
-* Responsive web design
-* Vite-based development workflows
-* Git and GitHub branching workflows
-* Pull Requests and code integration
-* CI/CD with GitHub Actions
-* Production deployment with GitHub Pages
+- Component-based React architecture
+- State management with React hooks
+- Client-side routing
+- Reusable UI components
+- Form handling and validation
+- Responsive web design
+- Vite-based development workflows
+- Git and GitHub branching workflows
+- Pull Requests and code integration
+- CI/CD with GitHub Actions
+- Production deployment with GitHub Pages
 
 ## 📌 Version
 
