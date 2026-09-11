@@ -1,18 +1,26 @@
 import "./Sellerbox.css";
 import { Link } from "react-router-dom";
+import useStore from "../../store/useStore";
+import { useShallow } from 'zustand/react/shallow';
 
-const SellerBox = ({
-  food,
-  isWishlist,
-  onWishlist,
-  cart,
-  addToCart,
-  removeCart,
-  handleIncrease,
-  handleDecrease,
-}) => {
+const SellerBox = ({food}) => {
 
-  const cartItem = cart.find(
+   const cartData = useStore(
+    useShallow((state)=>({
+      cart:state.cart,
+      addToCart:state.addToCart,
+      removeFromCart:state.removeFromCart,
+      increaseQuantity:state.increaseQuantity,
+      decreaseQuantity:state.decreaseQuantity,
+    }))
+   )
+
+   const wishlist = useStore(state => state.wishlist);
+   const handleWishlist = useStore(state=> state.handleWishlist);
+   const isWishlist = wishlist.includes(food.id);
+
+
+  const cartItem = cartData.cart.find(
     (item) => item.id === food.id
   );
 
@@ -45,7 +53,7 @@ const SellerBox = ({
                 : ""
             }`}
             onClick={(e) => {
-              onWishlist(food.id);
+              handleWishlist(food.id);
             }}
           >
             <i
@@ -93,7 +101,7 @@ const SellerBox = ({
         <button
           type="button"
           className="seller-cart"
-          onClick={() => addToCart(food.id)}
+          onClick={() => cartData.addToCart(food)}
         >
           <span>
             ADD TO CART
@@ -113,8 +121,8 @@ const SellerBox = ({
             type="button"
             onClick={() =>
               quantity === 1
-                ? removeCart(food.id)
-                : handleDecrease(food.id)
+                ? cartData.removeFromCart(food.id)
+                : cartData.decreaseQuantity(food.id)
             }
             aria-label={
               quantity === 1
@@ -144,7 +152,7 @@ const SellerBox = ({
           <button
             type="button"
             onClick={() =>
-              handleIncrease(food.id)
+              cartData.increaseQuantity(food.id)
             }
             aria-label="Increase quantity"
           >

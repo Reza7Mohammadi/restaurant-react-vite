@@ -1,22 +1,30 @@
 import "./Fooditem.css";
 import { foods } from "../../Data/foods";
 import { useParams, Link } from "react-router-dom";
+import useStore from "../../store/useStore";
+import { useShallow } from 'zustand/react/shallow';
 
-const Fooditem = ({
-  wishlist,
-  onWishlist,
-  cart,
-  addToCart,
-  removeCart,
-  handleIncrease,
-  handleDecrease,
-}) => {
+const Fooditem = () => {
+
+  const cartData = useStore(
+      useShallow((state)=>({
+        cart:state.cart,
+        addToCart:state.addToCart,
+        removeFromCart:state.removeFromCart,
+        increaseQuantity:state.increaseQuantity,
+        decreaseQuantity:state.decreaseQuantity,
+      }))
+     )
 
   const { id } = useParams();
-
   const item = foods.find(
     (food) => food.id === Number(id)
   );
+
+
+     const wishlist = useStore(state => state.wishlist);
+     const handleWishlist = useStore(state=> state.handleWishlist);
+
 
   if (!item) {
     return (
@@ -37,10 +45,10 @@ const Fooditem = ({
     );
   }
 
-
+  
   const isWishlist = wishlist.includes(item.id);
 
-  const cartItem = cart.find(
+  const cartItem = cartData.cart.find(
     (cartItem) => cartItem.id === item.id
   );
 
@@ -76,7 +84,7 @@ const Fooditem = ({
             className={`food-wishlist ${
               isWishlist ? "active" : ""
             }`}
-            onClick={() => onWishlist(item.id)}
+            onClick={() => handleWishlist(item.id)}
             aria-label="Add to wishlist"
           >
             <i
@@ -128,7 +136,7 @@ const Fooditem = ({
                 type="button"
                 className="food-add-cart"
                 onClick={() =>
-                  addToCart(item.id)
+                  cartData.addToCart(item)
                 }
               >
                 <span>
@@ -146,8 +154,8 @@ const Fooditem = ({
                   type="button"
                   onClick={() =>
                     quantity === 1
-                      ? removeCart(item.id)
-                      : handleDecrease(item.id)
+                      ? cartData.removeFromCart(item.id)
+                      : cartData.decreaseQuantity(item.id)
                   }
                   aria-label={
                     quantity === 1
@@ -173,7 +181,7 @@ const Fooditem = ({
                 <button
                   type="button"
                   onClick={() =>
-                    handleIncrease(item.id)
+                    cartData.increaseQuantity(item.id)
                   }
                   aria-label="Increase quantity"
                 >

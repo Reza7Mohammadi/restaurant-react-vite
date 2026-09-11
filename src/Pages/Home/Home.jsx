@@ -6,13 +6,13 @@ import Cta from "../../component/Cta/Cta";
 import Blog from "../../component/Blog/Blog";
 import Footer from "../../component/Footer/Footer";
 
-const Home = ({wishlist,onWishlist,cart,addToCart,removeCart,handleIncrease,handleDecrease}) => {
+const Home = () => {
     return ( 
         <>
           <Hero />
           <Store />
           <StoreBanner />
-          <Seller wishlist={wishlist} onWishlist={onWishlist} cart={cart} addToCart={addToCart} removeCart={removeCart} handleIncrease={handleIncrease} handleDecrease={handleDecrease} />
+          <Seller />
           <Cta />
           <Blog />
           <Footer />

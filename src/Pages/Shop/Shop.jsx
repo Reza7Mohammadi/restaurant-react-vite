@@ -4,7 +4,7 @@ import SellerBox from "../../component/Seller/Sellerbox";
 import "./Shop.css";
 
 
-const Shop = ({wishlist,onWishlist,cart,addToCart,removeCart,handleIncrease,handleDecrease}) => {
+const Shop = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("ALL");
   const categories = [
@@ -144,13 +144,6 @@ const Shop = ({wishlist,onWishlist,cart,addToCart,removeCart,handleIncrease,hand
               <SellerBox
                 key={food.id}
                 food={food}
-                isWishlist={wishlist.includes(food.id)} 
-                onWishlist={onWishlist}
-                cart={cart} 
-                addToCart={addToCart} 
-                removeCart={removeCart} 
-                handleIncrease={handleIncrease} 
-                handleDecrease={handleDecrease}
               />
             ))}
           </div>
