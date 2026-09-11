@@ -1,15 +1,22 @@
 import "./Cart.css";
 import { Link } from "react-router-dom";
 import { foods } from "../../Data/foods";
+import useStore from "../../store/useStore";
+import { useShallow } from 'zustand/react/shallow';
 
-const Cart = ({
-  cart,
-  removeCart,
-  handleIncrease,
-  handleDecrease,
-}) => {
+const Cart = () => {
 
-  const cartFoods = cart
+  const cartData = useStore(
+    useShallow((state)=>({
+      cart:state.cart,
+      removeFromCart:state.removeFromCart,
+      increaseQuantity:state.increaseQuantity,
+      decreaseQuantity:state.decreaseQuantity,
+    }))
+   )
+
+
+  const cartFoods = cartData.cart
     .map((cartItem) => {
       const food = foods.find(
         (item) => item.id === cartItem.id
@@ -221,8 +228,8 @@ const Cart = ({
                           type="button"
                           onClick={() =>
                             food.quantity === 1
-                              ? removeCart(food.id)
-                              : handleDecrease(food.id)
+                              ? cartData.removeFromCart(food.id)
+                              : cartData.decreaseQuantity(food.id)
                           }
                           aria-label={
                             food.quantity === 1
@@ -248,7 +255,7 @@ const Cart = ({
                         <button
                           type="button"
                           onClick={() =>
-                            handleIncrease(food.id)
+                            cartData.increaseQuantity(food.id)
                           }
                           aria-label="Increase quantity"
                         >
@@ -266,7 +273,7 @@ const Cart = ({
                       type="button"
                       className="cart-remove"
                       onClick={() =>
-                        removeCart(food.id)
+                        cartData.removeFromCart(food.id)
                       }
                       aria-label="Remove item"
                     >

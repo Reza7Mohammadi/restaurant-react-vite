@@ -2,8 +2,12 @@ import "./Wishlist.css";
 import { Link } from "react-router-dom";
 import SellerBox from "../../component/Seller/Sellerbox";
 import { foods } from "../../Data/foods";
+import useStore from "../../store/useStore";
 
-const Wishlist = ({ wishlist, onWishlist,cart,addToCart,removeCart,handleIncrease,handleDecrease }) => {
+const Wishlist = () => {
+
+  const wishlist = useStore(state => state.wishlist);
+
 
   const wishlistFoods = foods.filter((food) =>
     wishlist.includes(food.id)
@@ -133,13 +137,6 @@ const Wishlist = ({ wishlist, onWishlist,cart,addToCart,removeCart,handleIncreas
               <SellerBox
                 key={food.id}
                 food={food}
-                onWishlist={onWishlist}
-                isWishlist={wishlist.includes(food.id)}
-                cart={cart} 
-                addToCart={addToCart} 
-                removeCart={removeCart} 
-                handleIncrease={handleIncrease} 
-                handleDecrease={handleDecrease}
               />
 
             ))}
